@@ -63,7 +63,7 @@ Thermostat.prototype.getEnergyUsage = function(){
   if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.MAXIMUM_TEMPERATURE_POWERSAVE_ON){
     return 'medium-usage';
   }
-  return 'high-usage';
+    return 'high-usage';
 };
 
 
