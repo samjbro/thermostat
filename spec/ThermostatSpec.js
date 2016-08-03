@@ -27,4 +27,25 @@ var thermostat;
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
 
+  it ('power saving mode is on by default', function(){
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+
+  it ('has a maximum temperature of 25 degrees when power saving is on', function(){
+    for( var i = 0; i <6; i++){
+      thermostat.up();
+    };
+    expect(thermostat.getCurrentTemperature()).toEqual(25);
+  });
+
+  it ('can switch PSM off', function(){
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+  });
+
+  it ('can switch PSM on', function(){
+    thermostat.switchPowerSavingModeOff();
+    thermostat.switchPowerSavingModeOn();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
 });
