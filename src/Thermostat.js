@@ -1,6 +1,7 @@
 'use strict';
 
 function Thermostat() {
+  this.DEFAULT_TEMPERATURE = 20;
   this.MAX_TEMP_PSM_OFF = 32;
   this.MAX_TEMP_PSM_ON = 25;
   this.MINIMUM_TEMPERATURE = 10;
@@ -37,7 +38,7 @@ Thermostat.prototype.isMaximumTemperature = function () {
 };
 
 
-Thermostat.prototype.increasesTemperature = function () {
+Thermostat.prototype.up = function () {
   if(this.isMaximumTemperature()) {
     return;
   }
@@ -45,9 +46,13 @@ Thermostat.prototype.increasesTemperature = function () {
 };
 
 
-Thermostat.prototype.decreasesTemperature = function () {
+Thermostat.prototype.down = function () {
   if(this.isMinimumTemperature()) {
     return;
   }
   this.temperature -= 1;
+};
+
+Thermostat.prototype.reset = function() {
+  this.temperature = this.DEFAULT_TEMPERATURE;
 };

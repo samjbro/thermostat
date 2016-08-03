@@ -13,18 +13,18 @@ describe('Thermostat' , function(){
   });
 
   it('increases temperature using up button', function() {
-    thermostat.increasesTemperature();
+    thermostat.up();
     expect(thermostat.getCurrentTemperature()).toEqual(21);
   });
 
   it('decreases temperature with up button', function() {
-    thermostat.decreasesTemperature();
+    thermostat.down();
     expect(thermostat.getCurrentTemperature()).toEqual(19);
   });
 
   it('has minimum temperature of 10 degrees', function(){
     for (var i = 0; i < 11; i++) {
-      thermostat.decreasesTemperature();
+      thermostat.down();
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
@@ -49,7 +49,7 @@ describe('Thermostat' , function(){
   describe('When power-saving mode is ON', function() {
     it('maximum temperature is 25', function() {
       for (var i = 0; i < 6; i++) {
-        thermostat.increasesTemperature();
+        thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(25);
     });
@@ -59,9 +59,19 @@ describe('Thermostat' , function(){
     it('maximum temperature is 32', function() {
       thermostat.powerSavingOff();
       for(var i = 0; i < 13; i++ ) {
-        thermostat.increasesTemperature();
+        thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(32);
+    });
+  });
+
+  describe('Reset button:', function() {
+    it('resets the maximum power to 25', function() {
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      thermostat.reset();
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
   });
 
