@@ -56,7 +56,7 @@ Thermostat.prototype.resetTemperature = function(){
   this.temperature = this.DEFAULT_TEMPERATURE;
 };
 
-Thermostat.prototype.getEnergyUsage = function(){
+Thermostat.prototype.EnergyUsage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT){
     return 'low-usage';
   };
@@ -65,20 +65,3 @@ Thermostat.prototype.getEnergyUsage = function(){
   }
     return 'high-usage';
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

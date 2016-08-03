@@ -63,34 +63,17 @@ var thermostat;
       for( var i = 0; i < 3; i++){
         thermostat.down();
       };
-      expect(thermostat.getEnergyUsage()).toEqual('low-usage');
+      expect(thermostat.EnergyUsage()).toEqual('low-usage');
     });
     it ('shows medium energy when temperature is between 18 and 25 degrees (inclusive)', function(){
-      expect(thermostat.getEnergyUsage()).toEqual('medium-usage');
+      expect(thermostat.EnergyUsage()).toEqual('medium-usage');
     });
     it ('shows high energy when temperature is above 25 degrees', function(){
       thermostat.switchPowerSavingModeOff();
       for( var i = 0; i<6; i++){
         thermostat.up();
       };
-      expect(thermostat.getEnergyUsage()).toEqual('high-usage');
+      expect(thermostat.EnergyUsage()).toEqual('high-usage');
     });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
