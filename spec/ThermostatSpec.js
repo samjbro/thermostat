@@ -48,4 +48,47 @@ var thermostat;
     thermostat.switchPowerSavingModeOn();
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
+
+  it ('temperature can be reset to 20', function(){
+    thermostat.down();
+    thermostat.resetTemperature();
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
+  describe ('displaying energy usage levels', function(){
+    it ('shows low energy when temperature is below 18 degrees', function(){
+      for( var i = 0; i < 3; i++){
+        thermostat.down();
+      };
+      expect(thermostat.getEnergyUsage()).toEqual('low-usage');
+    });
+    it ('shows medium energy when temperature is between 18 and 25 degrees (inclusive)', function(){
+      expect(thermostat.getEnergyUsage()).toEqual('medium-usage');
+    });
+    it ('shows high energy when temperature is above 25 degrees', function(){
+      thermostat.switchPowerSavingModeOff();
+      for( var i = 0; i<6; i++){
+        thermostat.up();
+      };
+      expect(thermostat.getEnergyUsage()).toEqual('high-usage');
+    });
+  });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
