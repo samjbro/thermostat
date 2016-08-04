@@ -5,6 +5,7 @@ function Thermostat() {
   this.MAX_TEMP_PSM_OFF = 32;
   this.MAX_TEMP_PSM_ON = 25;
   this.MINIMUM_TEMPERATURE = 10;
+  this.LOW_USAGE = 18
   this.temperature = 20;
   this.powerSavingMode = true;
 };
@@ -55,4 +56,14 @@ Thermostat.prototype.down = function () {
 
 Thermostat.prototype.reset = function() {
   this.temperature = this.DEFAULT_TEMPERATURE;
+};
+
+Thermostat.prototype.energyUsage = function(){
+  if(this.temperature < this.LOW_USAGE) {
+    return 'low-usage';
+  }
+  else if(this.temperature >= this.LOW_USAGE && this.temperature <= this.MAX_TEMP_PSM_ON) {
+    return 'medium-usage';
+  }
+  return 'high-usage';
 };
