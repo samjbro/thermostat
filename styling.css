@@ -1,0 +1,17 @@
+#main_container {
+  width: 600px;
+  margin: 0 auto;
+  border-style: solid;
+
+}
+
+#output {
+  width: 250px;
+  margin: 0 auto;
+  border-style: solid;
+
+}
+
+body {
+  background-color: blue;
+}
