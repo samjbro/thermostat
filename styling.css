@@ -1,15 +1,81 @@
-#main_container {
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'saved by zero';
+}
+
+#main-container {
   width: 600px;
   margin: 0 auto;
   border-style: solid;
+  margin-top: 50px;
+  padding: 30px;
+  background-color: gray;
+  border-radius: 25px;
+  box-shadow: 30px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#left-section {
+  width: 27%;
+  height: 100px;
+  display: inline-block;
+  border-style: solid;
+  background-color: pink;
+  vertical-align: top;
+  background-image: url("http://clipartix.com/wp-content/uploads/2016/04/Thermometer-clip-art-black-and-white-free-2.png");
+  background-size: 30px 30px;
+}
+
+#middle-section {
+  width: 40%;
+  border-style: solid;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-color: lightblue;
 
 }
 
-#output {
-  width: 250px;
-  margin: 0 auto;
-  border-style: solid;
+#right-section {
+  display: inline-block;
+  /*border-style: solid;*/
+  width: 27%;
+  vertical-align: top;
 
+}
+
+#bottom-section {
+/*  padding-top: 10px;
+  padding-left: 25%;
+*/
+  /*border-style: solid;*/
+/*margin: 0 auto;*/
+}
+
+button {
+
+
+-webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+   -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+   box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+}
+
+#cities {
+
+}
+#output {}
+#buttons {}
+
+#psm-mode {
+  margin: 0 auto;
+  /*border-style: solid;*/
 }
 
 body {

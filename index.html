@@ -6,20 +6,33 @@
   <title>Thermostat</title>
 </head>
 <body>
-  <section id="main_container">
-    <section id="output">
-      <h1 id="temperature">20</h1>
+  <section id="main-container">
+    <section id="left-section">
+      <div id="cities">
+
+      </div>
     </section>
-    <p>
-      <button id="increase-temp">+</button>
-      <button id="decrease-temp">-</button>
-      <button id="reset-temp">reset</button>
-      <br>
-      Power Saving Mode is <span id="power-saving-status">on</span>
-      <br>
-      <button id="psm-on">PSM on</button>
-      <button id="psm-off">PSM off</button>
-    </p>
+    <section id="middle-section">
+      <div id="output">
+        <h1 id="temperature">20</h1>
+      </div>
+    </section>
+
+    <section id="right-section">
+      <div id="buttons">
+        <button id="increase-temp">+</button><p>
+        <button id="decrease-temp">-</button><p>
+        <button id="reset-temp">reset</button>
+      </div>
+    </section>
+
+    <section id="bottom-section">
+      <div id="psm-mode">
+        Power Saving Mode is <span id="power-saving-status">on</span>
+        <button id="psm-on">PSM on</button>
+        <button id="psm-off">PSM off</button>
+      </div>
+    </section>
   </section>
   <section>
   <h1>Current temperature in <span id="selected-city"></span> is: <span id="current-temperature"></span></h1>
